@@ -48,42 +48,32 @@
 \renewcommand{\exists}{\oldexists\,}
 
 \newcommand{\defn}[1]{%
-    \ifthenelse{\equal{#1}{.}}
-    {\textbf{\sffamily Definition.}}%
-    {\textbf{\sffamily Definition #1}}%
+    {\textbf{\sffamily 정의.}}%
 }
 
 \newcommand{\thm}[1]{%
-    \ifthenelse{\equal{#1}{.}}
-    {\textbf{\sffamily Theorem.}}%
-    {\textbf{\sffamily Theorem #1}}%
+    {\textbf{\sffamily 정리.}}%
 }
 
 \newcommand{\prop}[1]{%
-    \ifthenelse{\equal{#1}{.}}
-    {\textbf{\sffamily Proposition.}}%
-    {\textbf{\sffamily Proposition #1}}%
+    {\textbf{\sffamily 명제.}}%
 }
 
 \newcommand{\ex}[1]{%
-    \ifthenelse{\equal{#1}{.}}
-    {\textbf{\sffamily Example.}}%
-    {\textbf{\sffamily Example #1}}%
+    {\textbf{\sffamily 예제.}}%
 }
 
 \newcommand{\prob}[1]{%
-    \ifthenelse{\equal{#1}{.}}
     {\textbf{\sffamily Problem.}}%
-    {\textbf{\sffamily Problem #1}}%
 }
 
-\newcommand{\recall}{\textbf{\sffamily Recall.\;}}
-\newcommand{\rmk}{\textbf{\sffamily Remark.\;}}
-\newcommand{\pf}{\textbf{\sffamily Proof.\;}}
-\newcommand{\question}{\textbf{\sffamily Question.\;}}
-\newcommand{\notation}{\textbf{\sffamily Notation.\;}}
-\newcommand{\cor}{\textbf{\sffamily Corollary.\;}}
-\newcommand{\lemma}{\textbf{\sffamily Lemma.\;}}
+\newcommand{\recall}{\textbf{\sffamily Recall. \;}}
+\newcommand{\rmk}{\textbf{\sffamily 참고. }}
+\newcommand{\pf}{\textbf{\sffamily 증명. }}
+\newcommand{\question}{\textbf{\sffamily Question. \;}}
+\newcommand{\notation}{\textbf{\sffamily 표기법. \;}}
+\newcommand{\cor}{\textbf{\sffamily 따름정리. \;}}
+\newcommand{\lemma}{\textbf{\sffamily 도움정리. \;}}
 \newcommand{\claim}{\textbf{Claim}}
 
 \newcommand{\note}[1]{({\sffamily #1})}
