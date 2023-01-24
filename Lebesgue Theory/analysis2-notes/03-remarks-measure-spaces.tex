@@ -1,0 +1,102 @@
+\section*{Remarks on Construction of Measure}
+
+Construction of measure 증명에서 추가로 참고할 내용입니다.
+
+\prop. \(A\)가 열린집합이면 \(A \in \mf{M}(\mu)\) 이다. 또한 \(A^C \in \mf{M}(\mu)\) 이므로, \(F\)가 닫힌집합이면 \(F \in \mf{M}(\mu)\) 이다.
+
+\pf 중심이 \(x\in \R^p\) 이고 반지름이 \(r\)인 열린 box를 \(I(x, r)\)이라 두자. \(I(x, r)\)은 명백히 \(\mf{M}_F(\mu)\)의 원소이다. 이제
+\[
+    A = \bigcup_{\substack{x \in \Q^p, \; r \in \Q \\ I(x, r)\subset A}} I(x, r)
+\]
+로 적을 수 있으므로 \(A\)는 \(\mf{M}_F(\mu)\)의 원소들의 countable union이 되어 \(A \in \mf{M}(\mu)\) 이다. 이제 \(\mf{M}(\mu)\)가 \(\sigma\)-algebra이므로 \(A^C\in \mf{M}(\mu)\) 이고, 이로부터 임의의 닫힌집합 \(F\)도 \(\mf{M}(\mu)\)의 원소임을 알 수 있다.
+
+\prop. \(A \in \mf{M}(\mu)\) 이면 임의의 \(\epsilon > 0\) 에 대하여
+\[
+    F \subset A \subset G, \quad \mu\paren{G \bs A} < \epsilon, \quad \mu\paren{A \bs F} < \epsilon
+\]
+를 만족하는 열린집합 \(G\)와 닫힌집합 \(F\)가 존재한다.
+
+이는 곧 정의역을 \(\mf{M}(\mu)\)로 줄였음에도 \(\mu\)가 여전히 \(\mf{M}(\mu)\) 위에서 regular라는 뜻입니다.
+
+\pf \(A = \bigcup_{n=1}^\infty A_n\) (\(A_n \in \mf{M}_F(\mu)\)) 로 두고 \(\epsilon > 0\) 을 고정하자. 각 \(n \in \N\) 에 대하여 열린집합 \(B_{n, k} \in \Sigma\) 를 잡아 \(A_n \subset \bigcup_{k=1}^\infty B_{n, k}\) 와
+\[
+    \mu\paren{\bigcup_{k=1}^{\infty} B_{n, k}} \leq \sum_{k=1}^{\infty} \mu\paren{B_{n, k}} < \mu\paren{A_n} + 2^{-n}\epsilon
+\]
+을 만족하도록 할 수 있다.\footnote{첫 번째 부등식은 countable subadditivity, 두 번째 부등식은 \(\mu^\ast\)의 정의에서 나온다.}
+
+이제 열린집합을 잡아보자. \(G_n = \bigcup_{k=1}^{\infty} B_{n, k}\) 으로 두고 \(G = \bigcup_{n=1}^{\infty} G_n\) 로 잡는다. \(A_n \in \mf{M}_F(\mu)\) 이므로 \(\mu\paren{A_n} < \infty\) 이고, 다음이 성립한다.
+\[
+    \begin{aligned}
+        \mu\paren{G \bs A} & = \mu\paren{\bigcup_{n=1}^{\infty} G_n \bs \bigcup_{n=1}^{\infty} A_n} \leq \mu\paren{\bigcup_{n=1}^{\infty} G_n \bs A_n} \\ &\leq \sum_{n=1}^{\infty} \mu\paren{G_n \bs A_n} \leq \sum_{n=1}^{\infty} 2^{-n}\epsilon = \epsilon.
+    \end{aligned}
+\]
+닫힌집합의 존재성을 보이기 위해 위 과정을 \(A^C\)에 대해 반복하면 \(A^C \subset F^C\), \(\mu\paren{F^C \bs A^C} < \epsilon\) 가 되도록 열린집합 \(F^C\)를 잡을 수 있다. \(F\)가 닫힌집합이고 \(F^C \bs A^C = F^C \cap A = A\bs F\) 이므로 \(\mu\paren{A \bs F} < \epsilon\) 이고 \(F\subset A\) 이다.
+
+\defn. \note{Borel \(\sigma\)-algebra} \(\R^p\)의 모든 열린집합과 닫힌집합을 포함하는 \(\sigma\)-algebra를 \(\mf{B} = \mf{B}(\R^p)\) 라 적고 \textbf{Borel \(\sigma\)-algebra}라 한다. 또한 \(\mf{B}\)의 원소 \(E\)를 \textbf{Borel set}이라 한다.
+
+Borel \(\sigma\)-algebra는 \(\R^p\)의 열린집합을 포함하는 가장 작은 \(\sigma\)-algebra로 정의할 수도 있습니다. \(O\)가 \(\R^p\)의 열린집합의 모임이라 하면
+\[
+    \mf{B} = \bigcap_{O \subset G,\;G:\, \sigma\text{-algebra}} G
+\]
+로 정의합니다. 여기서 `가장 작은'의 의미는 집합의 관점에서 가장 작다는 의미로, 위 조건을 만족하는 임의의 집합 \(X\)를 가져오더라도 \(X \subset \mf{B}\) 라는 뜻입니다. 그래서 교집합을 택하게 됩니다. 위 정의에 의해 \(\mf{B} \subset \mf{M}(\mu)\) 임도 알 수 있습니다.
+
+\section*{\(\mu\)-measure Zero Sets}
+
+\defn. \note{\(\mu\)-measure zero set} \(A \in \mf{M}(\mu)\) 에 대하여 \(\mu(A) = 0\) 인 \(A\)를 \textbf{\(\mu\)-measure zero set}이라 한다.
+
+\prop. \(A \in \mf{M}(\mu)\) 이면 \(F \subset A \subset G\) 인 Borel set \(F\), \(G\)가 존재한다. 추가로, \(A\)는 Borel set과 \(\mu\)-measure zero set의 합집합으로 표현할 수 있으며, \(A\)와 적당한 \(\mu\)-measure zero set을 합집합하여 Borel set이 되게 할 수 있다.
+
+\pf \(\mf{M}(\mu)\)의 regularity를 이용하여 다음을 만족하는 열린집합 \(G_n \in \Sigma\), 닫힌집합 \(F_n \in \Sigma\) 를 잡는다.
+\[
+    F_n \subset A \subset G_n, \quad \mu\paren{G_n \bs A} < \frac{1}{n}, \quad \mu\paren{A \bs F_n} < \frac{1}{n}.
+\]
+이제 \(F = \bigcup_{n=1}^{\infty} F_n\), \(G = \bigcap_{n=1}^{\infty} G_n\) 로 정의하면 \(F, G \in \mf{B}\) 이고 \(F \subset A \subset G\) 이다.
+
+한편, \(A = F \cup (A \bs F)\), \(G = A \cup (G \bs A)\) 로 적을 수 있다. 그런데 \(n \ra \infty\) 일 때
+\[
+    \begin{rcases}
+        \mu\paren{G \bs A}\leq \mu\paren{G_n \bs A} < \frac{1}{n} \\
+        \mu\paren{A \bs F} \leq \mu\paren{A \bs F_n} < \frac{1}{n}
+    \end{rcases} \ra 0
+\]
+이므로 \(A \in \mf{M}(\mu)\) 는 Borel set 과 \(\mu\)-measure zero set의 합집합이다. 그리고 \(A \in \mf{M}(\mu)\) 에 적당한 \(\mu\)-measure zero set을 합집합하여 Borel set이 되게 할 수 있다.
+
+\prop. 임의의 measure \(\mu\)에 대하여 \(\mu\)-measure zero set의 모임은 \(\sigma\)-ring이다.
+
+\pf Countable subadditivity를 확인하면 나머지는 자명하다. 모든 \(n\in \N\) 에 대하여 \(\mu\paren{A_n} = 0\) 이라 하면
+\[
+    \mu\paren{\bigcup_{n=1}^{\infty} A_n} \leq \sum_{n=1}^{\infty} \mu\paren{A_n} = 0
+\]
+이다.
+
+\prop. \(A\)가 countable set이면 \(m(A) = 0\) 이다. 그러나 \(m(A) = 0\) 이지만 uncountable set인 \(A\)가 존재하기 때문에 역은 성립하지 않는다.
+
+\pf \(A\)가 countable set이라 하자. 그러면 \(A\)는 점들의 countable union이고, 점은 measure가 0인 \(\R^p\)의 닫힌집합이므로 \(A\)는 measurable이면서 (닫힌집합의 합집합) \(m(A) = 0\) 이 된다.
+
+Uncountable인 경우에는 Cantor set \(P\)를 생각한다. \(E_n\)을 다음과 같이 정의한다.
+\begin{itemize}
+    \item \(E_0 = [0, 1]\).
+    \item \(E_1 = \left[0, \frac{1}{3}\right] \cup \left[\frac{2}{3}, 1\right]\), \(E_0\)의 구간을 3등분하여 가운데를 제외한 것이다.
+    \item \(E_2 = \left[0, \frac{1}{9}\right] \cup \left[\frac{2}{9}, \frac{3}{9}\right] \cup \left[\frac{6}{9}, \frac{7}{9}\right] \cup \left[\frac{8}{9}, 1\right]\), 마찬가지로 \(E_1\)의 구간을 3등분하여 가운데를 제외한 것이다.
+\end{itemize}
+위 과정을 반복하여 \(E_n\)을 얻고, Cantor set은 \(P = \bigcap_{n=1}^{\infty} E_n\) 로 정의한다. 여기서 \(m(E_n) = \paren{\frac{2}{3}}^n\) 임을 알 수 있고, \(P \subset E_n\) 이므로 \(m(P)\leq m(E_n)\) 가 성립한다. 이제 \(n \ra \infty\) 로 두면 \(m(P) = 0\) 이다.
+
+\rmk \(\mf{M}(m) \subsetneq \mc{P}(\R^p)\). \(\R^p\)의 부분집합 중 measurable하지 않은 집합이 존재한다.\footnote{\href{https://en.wikipedia.org/wiki/Vitali_set}{Vitali set} 참고.}
+
+\section*{Measure Space}
+
+이제 본격적으로 measure와 Lebesgue integral을 다룰 공간을 정의하겠습니다.
+
+\defn. \note{Measure Space} 집합 \(X\)에 대하여 \(\sigma\)-algebra/\(\sigma\)-ring \(\mf{M}\) on \(X\)와 \(\mf{M}\) 위의 measure \(\mu\)가 존재하면 \(X\)를 \textbf{measure space}라 한다. 그리고 \(X = (X, \mf{M}, \mu)\) 로 표기한다.
+
+\defn. \note{Measurable Space} 집합 \(X\)에 대하여 \(\mf{M}\)이 \(\sigma\)-algebra on \(X\)이면 \(X\)를 \textbf{measurable space}라 한다. 그리고 \(X = (X, \mf{M})\) 으로 표기한다.
+
+두 정의를 비교하면 measure \(\mu\)가 주어진 \((X, \mf{M}, \mu)\)는 measure space이고, \(\mu\)가 주어지지 않은 \((X, \mf{M})\)은 잴 수 있다는 의미에서 measurable space입니다.
+
+\ex.
+\begin{enumerate}
+    \item \((\R^p, \mf{M}(m), m)\)를 Lebesgue measure space라 한다.
+    \item 원소의 개수를 세는 counting measure \(\mu(E) = \abs{E}\) (\(E \in \mc{P}(\N)\)) 에 대하여 \((\N, \mc{P}(\N), \mu)\)는 measure space가 된다.
+\end{enumerate}
+
+\pagebreak
