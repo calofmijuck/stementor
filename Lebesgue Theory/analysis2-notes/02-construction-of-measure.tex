@@ -123,9 +123,8 @@ Countably additive 조건이 성립하는 집합들만 모아서 measure를 cons
     \item \(A, B, C \in \R^p\) 에 대하여 \(d(A, B) \leq d(A, C) + d(C, B)\) 이다.
     \item \(A_1, B_2, B_1, B_2 \in \R^p\) 일 때, 다음이 성립한다.
           \[
-              \begin{rcases}
-                  d(A_1 \cup A_2, B_1 \cup B_2) \\d(A_1 \cap A_2, B_1 \cap B_2) \\d(A_1 \bs A_2, B_1 \bs B_2)
-              \end{rcases} \leq d(A_1, B_1) + d(A_2, B_2).
+              \left.\begin{array}{c}d(A_1 \cup A_2, B_1 \cup B_2) \\d(A_1 \cap A_2, B_1 \cap B_2) \\d(A_1 \bs A_2, B_1 \bs B_2)\end{array}\right\}
+              \leq d(A_1, B_1) + d(A_2, B_2).
           \]
 \end{itemize}
 
@@ -166,9 +165,8 @@ Countably additive 조건이 성립하는 집합들만 모아서 measure를 cons
 
 \(A, B \in \mf{M}_F(\mu)\) 라 하자. 그러면 \(A_n, B_n \in \Sigma\) 이 존재하여 \(A_n \ra A\), \(B_n \ra B\) 이 된다. 그러면
 \[
-    \begin{rcases}
-        d(A_n \cup B_n, A \cup B) \\ d(A_n \cap B_n, A \cap B) \\ d(A_n \bs B_n, A \bs B)
-    \end{rcases} \leq d(A_n, A) + d(B_n, B) \ra 0.
+    \left.\begin{array}{c}d(A_n \cup B_n, A \cup B) \\ d(A_n \cap B_n, A \cap B) \\ d(A_n \bs B_n, A \bs B)\end{array}\right\}
+    \leq d(A_n, A) + d(B_n, B) \ra 0
 \]
 이므로 \(A_n \cup B_n \ra A \cup B, A_n \bs B_n \ra A\bs B\) 이기 때문에 \(\mf{M}_F(\mu)\)는 ring이다.
 
