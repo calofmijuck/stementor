@@ -21,6 +21,26 @@
 
 \(\infty + 1 = \infty\) 등과 같이 이외의 연산에 대해서는 자연스럽게 정의합니다. 다만 이제 \(\overline{\R}\)을 다루기 때문에 양변에서 항을 cancel 할 때 주의해야 합니다.
 
+\pagebreak
+
+\begin{center}
+    \def\setA{(-0.866, 0.5) circle (\setradius cm)}
+    \def\setB{(0.866, 0.5) circle (\setradius cm)}
+    \def\setC{(0, -1) circle (\setradius cm)}
+    \pgfmathsetmacro{\setradius}{1.5}
+
+    \begin{tikzpicture}[scale=1.3]
+        \begin{scope}
+            \fill[color=gray!20, even odd rule] \setA \setB;
+        \end{scope}
+
+        \draw \setA \setB \setC;
+        \node at (-1.366, 1) {\(A\)};
+        \node at (1.366, 1) {\(B\)};
+        \node at (0, -1.5) {\(C\)};
+    \end{tikzpicture}
+\end{center}
+
 \section*{Algebra of Sets and Set Functions}
 
 르벡 적분을 공부하기 위해서는 먼저 집합의 `길이' 개념을 공부해야 합니다. 그리고 집합의 `길이' 개념을 확립하기 위해서는 집합 간의 연산과 이에 대한 구조가 필요합니다.
